@@ -1,45 +1,68 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#" style="margin-top: 10px; margin-left: 20px;">TODO</a>
-</nav>
-
-<div class="container-fluid ">
-
-  <div class="row no-gutters">
-
-      <div class="col-9 col-md-4 col-sm-6 listadd justify-content-center">
-          <form [formGroup]="todoText" (ngSubmit)="addItem()">
-              <div class="input-group mb-3" style="margin-top: 50px; ">
-
-                  <input formControlName="txtItem" type="text" class="form-control" name="txtItem"
-                       style="outline: none; background-color: inherit; color: black;">
-
-              </div>
-
-
-
-
-              <button type="submit" class="btn btn-primary" >ADD</button>
-          </form>
-      </div>
-
-      <div class="col-9 col-sm-6 col-md-8 listdis justify-content-center">
-          <div>Drag and drop for sort todo</div>
-          <div style="margin-top: 50px; margin-left: 50px;">
-
-              <div class="example-container">
-
-                  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="list" class="example-list"
-                      (cdkDropListDropped)="drop($event)">
-                      <div class="example-box" *ngFor="let item of list" cdkDrag [cdkDragData]="item"
-                          style=" border: 0px; cursor: default;">
-                          <div class="column">{{item.item}}</div>
+<html>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" style="margin-top: 10px; margin-left: 20px;">TODO APP</a>
+          </nav>
+          
+          <div class="row">
+              <div class="col-3"></div>
+              <div class="col-6">
+                  <div class="jumbotron">
+                  <div class="card" style="width: 50rem">
+                      <div class="container-fluid ">
+                          <div class="row no-gutters">
+                            <div class="col-9 col-md-4 col-sm-6 listadd justify-content-center">
+                                  <form [formGroup]="todoText" (ngSubmit)="addItem()">
+                                      <div class="input-group mb-3" style="margin-top: 50px; ">
+                                          <input formControlName="txtItem" type="text" class="form-control" name="txtItem"
+                                            style="outline: none; background-color: inherit; color: rgb(2, 1, 1);">
+                                      </div>
+                                      <button type="submit" class="btn btn-secondary btn-sm" >ADD</button>
+                                  </form>
+                            </div>
+                          </div>
                       </div>
-                  </div>
+                     
+                      <div class="card-body" style="background-color: rgb(147, 111, 151);">
+                          <!-- <table class="table table-success table-striped">   -->
+                              <div class="col-9 col-sm-6 col-md-8 listdis justify-content-center">
+                                  <div style="margin-top: 50px; margin-left: 50px;">
+                                      <div class="example-container">
+                                          <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="list" class="example-list"
+                                              (cdkDropListDropped)="drop($event)">
+                                              <div class="example-box" *ngFor="let item of list" cdkDrag [cdkDragData]="item"
+                                                  style=" border: 0px; cursor: default;">
+                                                  <div class="column">{{item.item}}</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                           <!-- </table> -->
+                      </div>
+                    </div>
               </div>
           </div>
+              <div class="col-3"></div>
+          </div>
+    </body>
+</html>
 
 
-      </div>
 
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

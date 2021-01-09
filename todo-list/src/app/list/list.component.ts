@@ -25,7 +25,6 @@ export class ListComponent implements OnInit {
   getItem(){
    this.todo.get().subscribe((data:any)=>{
      this.list=data;
-console.log(data)
    })
   }
   drop(event: CdkDragDrop<string[]>) {
@@ -36,21 +35,13 @@ console.log(data)
   }
 
   addItem() {
-    console.log("inside:home comp ts:", this.todoText.value.txtItem)
     this.todo.add(this.todoText.value.txtItem)
       .subscribe((data: any) => {
-        console.log("dey",data)
         alert(data.data.message)
         this.getItem();
-
       }, (data: any) => {
         console.log(data)
-        
-
       })
-
-    
-
   }
   
 }

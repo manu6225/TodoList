@@ -8,15 +8,7 @@ const baseUrl = "http://localhost:3000/users";
 })
 export class TodoService {
 
-  constructor(private http: HttpClient) { }
-
-  // list() {
-  //   // console.log("Todo display")
-  //    return this.http.get(baseUrl + "/list", {
-  //      withCredentials: true
-  //    })
-  //   }
-
+  constructor(private http: HttpClient) {}
   add(item) {
     
     return this.http.post(baseUrl + "/addItem", {
